@@ -1,0 +1,6 @@
+rootProject.name = 'boot'
+include 'mapper'
+include 'app'
+include 'service'
+include 'interface'
+

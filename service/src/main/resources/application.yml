@@ -1,0 +1,45 @@
+server:
+  name: bootService
+  port: 8080
+    
+
+dataSource:
+  driverClassName: com.mysql.jdbc.Driver
+  dbUrl: jdbc:mysql://127.0.0.1:3306/mpm_pre_0111?useUnicode=true&useSSL=false&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
+  username: test
+  
+  password: 123456
+
+  initialSize: 10
+
+  maxActive : 100
+
+  maxIdle: 20
+
+  minIdle: 10
+
+  maxOpenPreparedStatement: 100
+
+  maxWait: 60000
+
+  validationQuery : SELECT 'x'
+
+  timeBetweenEvictionRunsMillis: 60000
+
+  minEvictableIdleTimeMillis: 300000
+
+  testOnReturn : false
+
+  testWhileIdle : true
+
+  testOnBorrow: false
+
+  poolPreparedStatements: true
+  
+  maxPoolPreparedStatementPerConnectionSize: 20
+
+  filters: stat,log4j,config
+
+  druidPublickey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALoG3D6InqPbnStEsQsaLKEJ/76x9u3zxoxfPhqNqDDzt7dDxLHrDOuMsP6ogjJlvlAjMRJigxG17Ciiq3HOPhECAwEAAQ==
+  connectionProperties: druid.stat.slowSqlMillis=5000;config.decrypt=true;config.decrypt.key=${dataSource.druidPublickey}
+
